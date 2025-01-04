@@ -25,17 +25,9 @@ I am using this log as part of my homeschooling journey, specifically utilizing 
 1. **Clone the Repository**:
     - Copy the repository to your local machine using the `git clone` command.
     - `git clone https://github.com/your-username/reading-log-project.git`
-2. **Change the Form Endpoint**
-
-This project uses **Formspree** (free version) to handle form submissions and send them directly to a dedicated email address. This helps me keep track of the reading records for this year’s Discovery K-12.
-
-*If you'd like to use Formspree for your own form submissions, follow these steps to change the form's endpoint:*
-
-   -   Create an account or log into your existing Formspree account.
-   -   Copy the new form submission URL (endpoint) provided by Formspree.
-   -   Replace the existing action URL in your HTML form with the new URL you copied.
-
-Once updated, your form will start sending data to the new email address connected to your Formspree account.
+      
+2. **Add Form Endpoint**
+I plan to use free software to handle form submissions and send them directly to a dedicated email address or spreadsheet. This will help me keep track of the reading records for this year’s Discovery K-12.
 
 3. **Test the Form**
 After updating the form with the new endpoint, save and test it.
