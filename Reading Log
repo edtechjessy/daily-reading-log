@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reading Log</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: radial-gradient(circle, #ff9a9e, #fad0c4, #fbc2eb, #a1c4fd, #c2e9fb);
+            background-size: cover;
+            color: #333;
+        }
+        .container {
+            max-width: 700px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #ffffffee;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            text-align: center;
+            color: #ff6f61;
+        }
+        label {
+            font-weight: bold;
+            margin-top: 10px;
+            display: block;
+        }
+        input, textarea, select, button {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background: #ff6f61;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #ff4f41;
+        }
+        .feelings-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+        .feelings-container label {
+            text-align: center;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 50%;
+            width: 18%;
+            text-align: center;
+            background-color: #f5f5f5; /* No color initially */
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .feelings-container input {
+            display: none;
+        }
+
+        .feelings-container label:hover {
+            background-color: #ff6f61;
+            transform: scale(1.1);
+        }
+
+        /* Circle styles for the selected feeling */
+        .feelings-container input:checked + label {
+            background-color: #4caf50; /* Green when selected */
+            color: white;
+        }
+
+        /* Styling for the star rating system */
+        .rating-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        .star {
+            font-size: 40px;
+            color: lightgray;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+        .star.filled {
+            color: gold;
+        }
+
+        .star-container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Daily Reading Log</h1>
+        <form action="https://docs.google.com/forms/d/e/1FAIpQLSc6aYmNqLIoW1eA_O3y6TpoSYDQmCgHEMW8yWjbRfOlu-dS4Q/formResponse" method="POST" target="_self">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="entry.your-name-field-id" placeholder="Enter your first name/nickname" required>
+
+            <label for="grade">Grade Level:</label>
+            <select id="grade" name="entry.your-grade-level-field-id" required>
+                <option value="4th Grade">4th Grade</option>
+                <option value="5th Grade">5th Grade</option>
+            </select>
+
+            <label for="book">Book Title:</label>
+            <input type="text" id="book" name="entry.your-book-title-field-id" placeholder="Enter the book title" required>
+
+            <label for="author">Author:</label>
+            <input type="text" id="author" name="entry.your-author-field-id" placeholder="Enter the author's name" required>
+
+            <label for="start-page">Page Started On:</label>
+            <input type="number" id="start-page" name="entry.your-start-page-field-id" required>
+
+            <label for="end-page">Page Finished On:</label>
+            <input type="number" id="end-page" name="entry.your-end-page-field-id" required>
+
+            <label for="summary">Summary:</label>
+            <textarea id="summary" name="entry.your-summary-field-id" rows="4" placeholder="Who, what, when, where, why?" required></textarea>
+
+            <label for="rating">Rating (1-10 Stars):</label>
+            <div class="rating-container">
+                <div class="star-container">
+                    <span class="star" data-value="1">★</span>
+                    <span class="star" data-value="2">★</span>
+                    <span class="star" data-value="3">★</span>
+                    <span class="star" data-value="4">★</span>
+                    <span class="star" data-value="5">★</span>
+                    <span class="star" data-value="6">★</span>
+                    <span class="star" data-value="7">★</span>
+                    <span class="star" data-value="8">★</span>
+                    <span class="star" data-value="9">★</span>
+                    <span class="star" data-value="10">★</span>
+                </div>
+            </div>
+
+            <label for="feelings">How Did You Feel?</label>
+            <div class="feelings-container">
+                <input type="radio" id="angry" name="feelings" value="angry" aria-label="Angry">
+                <label for="angry">Angry</label>
+
+                <input type="radio" id="neutral" name="feelings" value="neutral" aria-label="Neutral">
+                <label for="neutral">Neutral</label>
+
+                <input type="radio" id="happy" name="feelings" value="happy" aria-label="Happy">
+                <label for="happy">Happy</label>
+
+                <input type="radio" id="excited" name="feelings" value="excited" aria-label="Excited">
+                <label for="excited">Excited</label>
+
+                <input type="radio" id="ecstatic" name="feelings" value="ecstatic" aria-label="Ecstatic">
+                <label for="ecstatic">Ecstatic</label>
+
+                <input type="radio" id="nauseous" name="feelings" value="nauseous" aria-label="Nauseous">
+                <label for="nauseous">Nauseous</label>
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        const stars = document.querySelectorAll('.star');
+        
+        stars.forEach(star => {
+            star.addEventListener('click', function() {
+                const value = parseInt(star.getAttribute('data-value'));
+                
+                stars.forEach((s, index) => {
+                    if (index < value) {
+                        s.classList.add('filled');
+                    } else {
+                        s.classList.remove('filled');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
