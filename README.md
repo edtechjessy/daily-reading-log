@@ -7,18 +7,15 @@ I am using this log as part of my homeschooling journey, specifically utilizing 
 This project is a responsive, visually appealing reading log form designed for use with Formspree. It allows students or users to submit their daily reading information, including book details, a rating, and their feelings about the reading. The form integrates custom styling, a star-rating system, and a feelings selector to make the experience interactive and fun.
 
 ## Track
-
 - **Book Title**
 - **Author**
 - **Page Numbers** (Start and End)
 - **Summary** of what they've read
 - **Interactive Star Rating**
-     - Users can select a star rating from 1 to 10 based on their enjoyment
-        - JavaScript is used to handle the "fill effect" when stars are clicked.  
-       - This creates a visually engaging way for users to rate their books.
-- **Feelings**         
-  - Users can choose from a list of emotions (e.g., Angry, Happy, Excited) to describe how they felt about the book. 
-    - Hover and selection effects are applied to make the interaction more intuitive.
+-  **Feelings**         
+
+![interactive easy for kids](https://github.com/user-attachments/assets/8d1ff3ab-8462-4575-9021-ba006d9ddccb)
+
 
 ## Formspree Integration  
    - The form action was updated to send data via Formspree. This enables submissions to be emailed directly to a specified email address for FREE (limited to 50 submissions a month on the free plan).  
@@ -58,15 +55,14 @@ Submit the form to ensure that the responses are sent to your email or dashboard
 
 ### 2. *JavaScript for Star Ratings*
    - *What was added:* A script to toggle the "filled" state of stars based on the user’s selection.  
-   - *Why:* To make the rating system visually interactive and user-friendly.
+   - *Why:* To make the rating system visually interactive and user-friendly.   This creates a visually engaging way for users to rate their books
 
 ### 3. *Improved Accessibility*
    - *What was added:* ARIA attributes (aria-label) for the feelings selector radio buttons and keyboard support for the star ratings.  
    - *Why:* To ensure the form is accessible for all users, including those using screen readers.
 
-### 4. *Enhanced Styling*
-   - *What was added:* Hover and focus states for buttons, radio inputs, and stars; better padding and alignment for elements.  
-   - *Why:* To provide a polished, professional design that improves user experience.
+### 4. *Users can choose from a list of emotions* (e.g., Angry, Happy, Excited) 
+    - Hover and selection effects are applied to make the interaction more intuitive.
 
 ## Future Improvements
 
